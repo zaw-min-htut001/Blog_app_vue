@@ -1,17 +1,27 @@
 <template>
-  <div class="text-center text-red-500">{{ this.$store.state.category.title }}</div>
+  <Navbar />
+  <NewsFeed />
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex/dist/vuex.cjs.js';
+import Navbar from '@/components/Navbar.vue'
+import NewsFeed from '@/components/NewsFeed.vue'
+
 export default {
+  name: 'HomeView',
+  components: { Navbar, NewsFeed},
+  computed: {
+    ...mapGetters([''])
+  },
+  methods: {
+    ...mapActions(['profile']),
 
-  mounted (){
-    console.log(this.$store.state.category.title);
-
+  },
+  mounted() {
+    this.profile()
   }
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

@@ -1,6 +1,12 @@
 import { createStore } from 'vuex'
-import category from './modules/category'
+import auth from './modules/auth'
+import category from './modules/category';
+import post from './modules/post';
 
 export default createStore({
-    modules: { category }
+    modules: { 
+        category , 
+        auth ,
+        post
+    }
 });
